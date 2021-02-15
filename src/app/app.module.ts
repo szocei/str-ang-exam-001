@@ -7,17 +7,25 @@ import { NavComponent } from './common/nav/nav.component';
 import { HomeComponent } from './common/home/home.component';
 import { HeroesComponent } from './common/heroes/heroes.component';
 import { BehaviorSubject } from 'rxjs';
+import { FilterPipe } from './pipe/filter.pipe';
+import { SortPipe } from './pipe/sort.pipe';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    HeroesComponent
+    HeroesComponent,
+    FilterPipe,
+    SortPipe,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

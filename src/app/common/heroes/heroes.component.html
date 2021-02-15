@@ -1,17 +1,22 @@
 <div class="row">
-    <div class="col-12">
+    <div class="col-8 offset-2">
+
+        <form class="form-inline my-2 my-lg-0">
+            <input (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Search">
+
+        </form>
 
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Superpower</th>
-                    <th>Address</th>
+                    <th (click)="onColumnSelect('id')">Id</th>
+                    <th (click)="onColumnSelect('name')">Name</th>
+                    <th (click)="onColumnSelect('superPower')">Superpower</th>
+                    <th (click)="onColumnSelect('address')">Address</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let hero of heroList$ | async">
+                <tr *ngFor="let hero of heroList$ | async |filter:phrase:'name' |sort:columnKey">
                     <td>{{hero.id}}</td>
                     <td>{{hero.name}}</td>
                     <td>{{hero.superPower}}</td>
