@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './common/nav/nav.component';
 import { HomeComponent } from './common/home/home.component';
 import { HeroesComponent } from './common/heroes/heroes.component';
+import { BehaviorSubject } from 'rxjs';
 
 @NgModule({
   declarations: [
